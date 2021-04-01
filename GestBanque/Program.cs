@@ -21,15 +21,30 @@ namespace GestBanque
                 Titulaire = titulaire
             };
 
-            courant.LigneDeCredit = -500;
-            courant.Depot(-200);
-            courant.Depot(500);
-            courant.Retrait(-100);
-            courant.Retrait(701);
-            courant.Retrait(700);
+            Courant courant2 = new Courant()
+            {
+                Numero = "00002",
+                LigneDeCredit = 0,
+                Titulaire = titulaire
+            };
 
-            Console.WriteLine($"le solde du compte {courant.Numero} est : {courant.Solde}");
+            Banque banque = new Banque()
+            {
+                Nom = "Brussels Bank"
+            };
 
+            banque.Ajouter(courant);
+            banque.Ajouter(courant2);
+
+            banque["00001"].LigneDeCredit = -500;
+            banque["00001"].Depot(-200);
+            banque["00001"].Depot(500);
+            banque["00002"].Depot(300);
+            banque["00001"].Retrait(-100);
+            banque["00001"].Retrait(701);
+            banque["00001"].Retrait(700);
+
+            Console.WriteLine($"le solde du compte {banque["00001"].Numero} est : {banque["00001"].Solde}");
         } 
     }
 }
