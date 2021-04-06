@@ -6,15 +6,15 @@ namespace Models
 {
     public class Banque
     {
-        private Dictionary<string, Courant> _comptes = new Dictionary<string, Courant>();
+        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
         public string Nom { get; set; }
 
-        public Courant this[string numero]
+        public Compte this[string numero]
         {
             get { return _comptes[numero]; }
         }
 
-        public void Ajouter(Courant compte)
+        public void Ajouter(Compte compte)
         {
             _comptes.Add(compte.Numero, compte);
         }
@@ -28,7 +28,7 @@ namespace Models
         {
             double total = 0D;
 
-            foreach (Courant compte in _comptes.Values)
+            foreach (Compte compte in _comptes.Values)
             {
                 if (compte.Titulaire == titulaire)
                 {

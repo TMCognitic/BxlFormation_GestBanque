@@ -33,21 +33,22 @@ namespace GestBanque
             };
 
             banque.Ajouter(courant);
-            //banque.Ajouter(courant2);
+            banque.Ajouter(epargne);
 
-            banque["00001"].LigneDeCredit = -500;
+            if(banque["00001"] is Courant c)
+            {
+                c.LigneDeCredit = -500;
+            }
+            
             banque["00001"].Depot(-200);
             banque["00001"].Depot(500);            
             banque["00001"].Retrait(-100);
             banque["00001"].Retrait(701);
             banque["00001"].Retrait(700);
 
-            //banque["00002"].Depot(300);
-            epargne.Depot(300);
-            epargne.Retrait(100);
-            epargne.Retrait(300);
-
-
+            banque["00002"].Depot(300);
+            banque["00002"].Retrait(100);
+            banque["00002"].Retrait(300);
 
             Console.WriteLine($"le solde du compte {banque["00001"].Numero} est : {banque["00001"].Solde}");
             Console.WriteLine($"Avoir des comptes de Mr {titulaire.Nom} {titulaire.Prenom} : {banque.AvoirDesComptes(titulaire)}");
