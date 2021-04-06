@@ -45,6 +45,7 @@ namespace GestBanque
             banque["00001"].Retrait(700);
 
             Console.WriteLine($"le solde du compte {banque["00001"].Numero} est : {banque["00001"].Solde}");
+            Console.WriteLine($"Avoir des comptes de Mr {titulaire.Nom} {titulaire.Prenom} : {banque.AvoirDesComptes(titulaire)}");
         } 
     }
 }
