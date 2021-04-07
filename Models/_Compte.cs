@@ -1,10 +1,12 @@
-﻿using System;
+﻿//Implémentation du 4ème exercice des interfaces
+
+using System;
 
 namespace Models
 {
-    public abstract class Compte : ICustomer, IBanker
+    public abstract class _Compte : ICustomer, _IBanker
     {
-        public static double operator +(double soldePrecedant, Compte courant)
+        public static double operator +(double soldePrecedant, _Compte courant)
         {
             return ((soldePrecedant < 0) ? 0 : soldePrecedant) + ((courant.Solde < 0) ? 0 : courant.Solde);
         }
@@ -39,6 +41,12 @@ namespace Models
             }
         }
 
+        public virtual double LigneDeCredit
+        {
+            get { return 0D; }
+            set { return; /*à remplacer par une erreur asap.*/ }
+        }
+
         public Personne Titulaire
         {
             get
@@ -64,18 +72,13 @@ namespace Models
 
         public virtual void Retrait(double montant)
         {
-            Retrait(montant, 0D);
-        }
-
-        protected void Retrait(double montant, double ligneDeCredit)
-        {
             if (!(montant > 0))
             {
                 Console.WriteLine("montant invalide!!");
                 return; //à remplacer par une erreur asap.
             }
 
-            if (Solde - montant < -ligneDeCredit)
+            if (Solde - montant < -LigneDeCredit)
             {
                 Console.WriteLine("Solde insuffisant!!");
                 return; //à remplacer par une erreur asap.
