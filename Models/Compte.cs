@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public class Compte
+    public abstract class Compte
     {
         public static double operator +(double soldePrecedant, Compte courant)
         {
@@ -82,6 +82,13 @@ namespace Models
             }
 
             Solde -= montant;
+        }
+
+        protected abstract double CalculInteret();
+
+        public void AppliquerInterer()
+        {
+            Solde += CalculInteret(); //Pattern Template Method
         }
     }
 }
