@@ -7,7 +7,12 @@ namespace Models
     public class Banque
     {
         private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
-        public string Nom { get; set; }
+        public string Nom { get; private set; }
+
+        public Banque(string nom)
+        {
+            Nom = nom;
+        }
 
         public Compte this[string numero]
         {

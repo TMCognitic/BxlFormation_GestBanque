@@ -7,30 +7,10 @@ namespace GestBanque
     {
         static void Main(string[] args)
         {
-            Personne titulaire = new Personne()
-            {
-                Nom = "Morre",
-                Prenom = "Thierry",
-                DateNaiss = new DateTime(1974, 6, 5)
-            };
-
-            Courant courant = new Courant()
-            {
-                Numero = "00001",
-                LigneDeCredit = 200,
-                Titulaire = titulaire
-            };
-
-            Epargne epargne = new Epargne()
-            {
-                Numero = "00002",
-                Titulaire = titulaire
-            };
-
-            Banque banque = new Banque()
-            {
-                Nom = "Brussels Bank"
-            };
+            Personne titulaire = new Personne("Morre", "Thierry", new DateTime(1974, 6, 5));
+            Courant courant = new Courant("00001", 200, titulaire);
+            Epargne epargne = new Epargne("00002", titulaire);
+            Banque banque = new Banque("Brussels Bank");
 
             banque.Ajouter(courant);
             banque.Ajouter(epargne);
