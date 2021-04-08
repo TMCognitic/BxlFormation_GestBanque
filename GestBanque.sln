@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestBanque", "GestBanque\Ge
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{94CC58B6-AD2D-43F8-A848-0EFA53B29D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExoCelsiusFahrenheit", "ExoCelsiusFahrenheit\ExoCelsiusFahrenheit.csproj", "{1FCAE33E-80FF-4FB8-B8CB-B451916D323F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExoCelsiusFahrenheit", "ExoCelsiusFahrenheit\ExoCelsiusFahrenheit.csproj", "{1FCAE33E-80FF-4FB8-B8CB-B451916D323F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModels", "TestModels\TestModels.csproj", "{15B884FE-9E93-4D7E-913D-8B1EDD97660C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1FCAE33E-80FF-4FB8-B8CB-B451916D323F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FCAE33E-80FF-4FB8-B8CB-B451916D323F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FCAE33E-80FF-4FB8-B8CB-B451916D323F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B884FE-9E93-4D7E-913D-8B1EDD97660C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B884FE-9E93-4D7E-913D-8B1EDD97660C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B884FE-9E93-4D7E-913D-8B1EDD97660C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B884FE-9E93-4D7E-913D-8B1EDD97660C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

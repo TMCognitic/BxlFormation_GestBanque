@@ -19,8 +19,7 @@ namespace Models
             {
                 if(value < 0)
                 {
-                    Console.WriteLine("Ligne de crédit invalide!!");
-                    return; //à remplacer par une erreur asap.
+                    throw new InvalidOperationException("La ligne de crédit est strictement positive");
                 }
 
                 _ligneDeCredit = value;

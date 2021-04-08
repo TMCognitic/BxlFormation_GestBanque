@@ -15,23 +15,63 @@ namespace GestBanque
             banque.Ajouter(courant);
             banque.Ajouter(epargne);
 
-            if(banque["00001"] is Courant c)
+            if (banque["00001"] is Courant c)
             {
-                c.LigneDeCredit = -500;
-            }
-            
-            banque["00001"].Depot(-200);
-            banque["00001"].Depot(500);            
-            banque["00001"].Retrait(-100);
-            banque["00001"].Retrait(701);
-            banque["00001"].Retrait(700);
+                try
+                {
+                    c.LigneDeCredit = -500;
 
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            try
+            {
+                banque["00001"].Depot(-200);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            banque["00001"].Depot(500);
+
+            try
+            {
+                banque["00001"].Retrait(-100);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                banque["00001"].Retrait(701);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            banque["00001"].Retrait(700);
             banque["00002"].Depot(300);
             banque["00002"].Retrait(100);
-            banque["00002"].Retrait(300);
+
+            try
+            {
+                banque["00002"].Retrait(300);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine($"le solde du compte {banque["00001"].Numero} est : {banque["00001"].Solde}");
             Console.WriteLine($"Avoir des comptes de Mr {titulaire.Nom} {titulaire.Prenom} : {banque.AvoirDesComptes(titulaire)}");
-        } 
+        }
     }
 }
