@@ -44,7 +44,13 @@ namespace Models
 
         public override void Retrait(double montant)
         {
+            double oldSolde = Solde;
             Retrait(montant, LigneDeCredit);
+
+            if(oldSolde >= 0D && Solde < 0)
+            {
+                RaisePassageEnNegatifEvent();
+            }
         }
 
         protected override double CalculInteret()

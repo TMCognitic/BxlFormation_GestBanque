@@ -9,6 +9,8 @@ namespace Models
             return ((soldePrecedant < 0) ? 0 : soldePrecedant) + ((courant.Solde < 0) ? 0 : courant.Solde);
         }
 
+        public event PassageEnNegatifDelegate PassageEnNegatifEvent;
+
         private string _numero;
         private double _solde;
         private Personne _titulaire;
@@ -99,6 +101,11 @@ namespace Models
         public void AppliquerInterer()
         {
             Solde += CalculInteret(); //Pattern Template Method
+        }
+
+        protected void RaisePassageEnNegatifEvent()
+        {
+            PassageEnNegatifEvent?.Invoke(this);
         }
     }
 }
