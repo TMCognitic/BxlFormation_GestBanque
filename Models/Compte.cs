@@ -9,7 +9,7 @@ namespace Models
             return ((soldePrecedant < 0) ? 0 : soldePrecedant) + ((courant.Solde < 0) ? 0 : courant.Solde);
         }
 
-        public event PassageEnNegatifDelegate PassageEnNegatifEvent;
+        public event Action<Compte> PassageEnNegatifEvent;
 
         private string _numero;
         private double _solde;
